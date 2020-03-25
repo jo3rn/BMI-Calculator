@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+
+  form(id='formBmi' method='GET' action='result' onsubmit='return validate()')
+    key Weight (in kg)
+    br
+    input(type='text' name='weight' required)
+    br
+    br
+    key Height (in cm)
+    br
+    input(type='text' name='height' required)
+    br
+    br
+    input(type='submit' value='calculate BMI')

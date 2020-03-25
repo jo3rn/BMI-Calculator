@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  p Your weight is #{weight} kg.
+  p Your height is #{height} cm.
+  p Your BMI is: #{bmiString} (#{bmi}).
+  p To get to normal weight you need to #{targetAction}#{targetKilo}.
+  br
+  a(href='/') Calculate another BMI
