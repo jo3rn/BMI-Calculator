@@ -12,4 +12,4 @@ This web application is powered by [Express](https://expressjs.com/) and [pug](h
 
 # Tests
 You can run the tests with `npm test`.    
-Tests are powered by [Mocha](https://github.com/mochajs/mocha) and [rewire]([Mocha](https://mochajs.org/)).
+Tests are powered by [Mocha](https://github.com/mochajs/mocha) and [rewire](https://github.com/jhnns/rewire).
