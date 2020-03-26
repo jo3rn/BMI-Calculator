@@ -14,6 +14,7 @@ const validate = () => {
     return true
 }
 
+const numberRegex = /^[0-9]+\.?[0-9]*$/
 const isNumber = (input) => {
-    return (!isNaN(input) && typeof input === 'number')
+    return numberRegex.test(input)
 }
