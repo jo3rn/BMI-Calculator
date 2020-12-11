@@ -13,22 +13,16 @@ on:
 
 # each job executes in a fresh instance of the virtual environment
 jobs:
-  build:
+  start:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: npm install and build webpack
+    - name: npm install and start express server
       run: |
         npm install
-        npm run build
-    # save artifacts created from one job to be used in another job within the same workflow
-    - uses: actions/upload-artifact@master
-      with:
-        name: webpack artifacts
-        path: public/
+        npm run start
   
   test:
-    needs: build # jobs usually run in parallel, but we need to wait for build to have the artifacts available
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -36,11 +30,6 @@ jobs:
         node-version: [12.x, 14.x]
     steps:
     - uses: actions/checkout@v2
-    # download artifact from build job
-    - uses: actions/download-artifact@master
-      with:
-        name: webpack artifacts
-        path: public
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
