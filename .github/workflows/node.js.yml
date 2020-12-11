@@ -13,14 +13,14 @@ on:
 
 # each job executes in a fresh instance of the virtual environment
 jobs:
-  start:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: npm install and start express server
+    - name: npm install and build
       run: |
         npm install
-        npm run start
+        npm run build --if-present
   
   test:
     runs-on: ubuntu-latest
